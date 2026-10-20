@@ -9,3 +9,5 @@ crash.log
 moto.pid
 moto.log
 .terraform.lock.hcl
+.azure/
+topaz.crt

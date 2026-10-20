@@ -1,0 +1,14 @@
+services:
+  topaz:
+    image: thecloudtheory/topaz-host:${TOPAZ_VERSION:-v1.10.222-preview}
+    container_name: topaz
+    command:
+      - --default-subscription
+      - 00000000-0000-0000-0000-000000000001
+      - --log-level
+      - Information
+    ports:
+      - "127.0.0.1:443:443"   # Entra ID login + Key Vault (Azure CLI / Terraform data plane)
+      - "127.0.0.1:8899:8899" # Resource Manager (management.azure.com) + metadata endpoint
+      - "127.0.0.1:8898:8898" # Key Vault (SDK data plane)
+      - "127.0.0.1:8891:8891" # Storage: blob, queue, table
