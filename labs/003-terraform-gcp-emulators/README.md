@@ -126,6 +126,11 @@ order-001  keyboard  2
     "keyboard"
 ```
 
+**Port already in use?** `make up` fails if another program holds one of the emulator ports
+(4443, 8085, 8080, 9010, 9020, 8086). On Windows, Logitech G HUB (`lghub_agent.exe`) listens on
+`127.0.0.1:9010`. Close it, or find the owner with `netstat -ano | findstr :9010` in PowerShell
+(`ss -ltnp` on Linux), then run `make up` again.
+
 ## How the provider is pointed at the emulators
 
 ```hcl
