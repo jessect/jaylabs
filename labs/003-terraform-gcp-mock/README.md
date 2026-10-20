@@ -1,4 +1,4 @@
-# Lab 003 — Run GCP Locally: Terraform Test + Mocks for $0
+# Lab 003 — Run GCP Locally: Terraform + Mock Provider for $0
 
 > 🎬 **Video:** coming soon
 >
