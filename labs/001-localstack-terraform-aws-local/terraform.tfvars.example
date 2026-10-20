@@ -1,0 +1,4 @@
+# Copy to terraform.tfvars to override the defaults in variables.tf.
+region   = "us-east-1"
+endpoint = "http://localhost:4566"
+project  = "jaylabs-lab001"

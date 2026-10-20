@@ -1,0 +1,10 @@
+.env
+.terraform/
+*.tfstate
+*.tfstate.*
+volume/
+localstack_providers_override.tf
+crash.log
+.venv/
+moto.pid
+moto.log
