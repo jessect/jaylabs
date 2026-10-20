@@ -1,8 +1,8 @@
 # Who is running Terraform: the Topaz user from `make login`.
 data "azurerm_client_config" "current" {}
 
-# RBAC vault: even its creator needs a data-plane role. Grant it on the resource
-# group *before* the vault exists, because azurerm reads the vault's data plane
+# RBAC vault: even its creator needs a data-plane role. Grant it at subscription
+# scope *before* the vault exists, because azurerm reads the vault's data plane
 # while creating it (see README, error 5).
 resource "azurerm_role_assignment" "deployer_kv_admin" {
   scope        = "/subscriptions/${var.subscription_id}"
