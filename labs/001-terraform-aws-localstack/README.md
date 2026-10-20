@@ -1,4 +1,4 @@
-# Lab 001 — Run AWS Locally: Terraform + LocalStack for $0
+# Lab 001 — Run AWS Locally: Terraform + LocalStack
 
 > 🎬 **Video:** coming soon
 >
