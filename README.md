@@ -7,6 +7,7 @@ Hands-on DevOps, SRE & Cloud labs from the JayLabs YouTube channel. CI/CD, IaC, 
 | # | Lab | Tools | Video |
 |---|---|---|---|
 | 001 | [Terraform on LocalStack and Moto: AWS on your laptop, $0](labs/001-localstack-terraform-aws-local) | Terraform, LocalStack, Moto, AWS CLI | _coming soon_ |
+| 002 | [Terraform test with a mocked azurerm provider: Azure without a subscription](labs/002-terraform-test-azure-mock) | Terraform, terraform test, azurerm | _coming soon_ |
 
 ## How to use
 
