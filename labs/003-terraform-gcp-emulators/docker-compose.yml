@@ -1,0 +1,40 @@
+# Five local GCP emulators. Nothing here talks to Google.
+x-gcloud-emulators: &gcloud
+  image: gcr.io/google.com/cloudsdktool/google-cloud-cli:${GCLOUD_EMULATORS_TAG:-589.0.0-emulators}
+
+services:
+  gcs:
+    image: fsouza/fake-gcs-server:${FAKE_GCS_VERSION:-1.56.1}
+    container_name: fake-gcs
+    command: ["-scheme", "http", "-port", "4443", "-backend", "memory", "-external-url", "http://localhost:4443"]
+    ports:
+      - "127.0.0.1:4443:4443"
+
+  pubsub:
+    <<: *gcloud
+    container_name: pubsub-emulator
+    command: ["gcloud", "beta", "emulators", "pubsub", "start", "--host-port=0.0.0.0:8085", "--project=jaylabs-local"]
+    ports:
+      - "127.0.0.1:8085:8085"
+
+  firestore:
+    <<: *gcloud
+    container_name: firestore-emulator
+    command: ["gcloud", "emulators", "firestore", "start", "--host-port=0.0.0.0:8080"]
+    ports:
+      - "127.0.0.1:8080:8080"
+
+  spanner:
+    <<: *gcloud
+    container_name: spanner-emulator
+    command: ["gcloud", "emulators", "spanner", "start", "--host-port=0.0.0.0:9010", "--rest-port=9020"]
+    ports:
+      - "127.0.0.1:9010:9010"   # gRPC
+      - "127.0.0.1:9020:9020"   # REST (what Terraform uses)
+
+  bigtable:
+    <<: *gcloud
+    container_name: bigtable-emulator
+    command: ["gcloud", "beta", "emulators", "bigtable", "start", "--host-port=0.0.0.0:8086"]
+    ports:
+      - "127.0.0.1:8086:8086"
