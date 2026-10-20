@@ -8,3 +8,4 @@ crash.log
 .venv/
 moto.pid
 moto.log
+.terraform.lock.hcl
