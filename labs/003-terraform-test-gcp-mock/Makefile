@@ -1,5 +1,5 @@
 # No cloud account needed: every target runs offline against a mocked provider.
-.PHONY: help init fmt validate test test-verbose test-plan test-junit step naive naive-test clean
+.PHONY: help init fmt validate test test-verbose test-plan step naive naive-test clean
 .DEFAULT_GOAL := help
 
 help: ## List the targets
@@ -24,9 +24,6 @@ test-verbose: ## Same, and print the plan/state of every run
 test-plan: ## Only the plan-time unit tests
 	terraform test -filter=tests/plan.tftest.hcl
 
-test-junit: ## Write a JUnit report to terraform-test.xml (for CI)
-	terraform test -junit-xml=terraform-test.xml
-
 step: ## Reproduce one real error, e.g. make step STEP=01-empty-mock
 	@test -n "$(STEP)" || { ls -d examples/mock-steps/*/ | xargs -n1 basename; exit 1; }
 	terraform test -test-directory=examples/mock-steps/$(STEP)
@@ -37,5 +34,5 @@ naive: ## terraform plan with the real provider and no credentials (fails)
 naive-test: ## terraform test WITHOUT mock_provider (fails the same way)
 	cd examples/naive-provider && terraform init -input=false >/dev/null && terraform test
 
-clean: ## Remove .terraform folders and reports
-	rm -rf .terraform examples/naive-provider/.terraform terraform-test.xml
+clean: ## Remove the .terraform folders
+	rm -rf .terraform examples/naive-provider/.terraform

@@ -7,11 +7,11 @@
 Write real tests for a small GCP stack (VPC, firewall, GCS, Compute Engine, Cloud SQL, Secret Manager,
 IAM) **without a GCP project, without a billing account and without logging in**. Terraform's native
 `terraform test` replaces the Google provider with `mock_provider "google"`, so the tests run in
-~3 seconds, offline, and in CI with zero secrets.
+~3 seconds, fully offline, on your laptop.
 
 This lab goes past the basics: a reusable module tested on its own, shared mock files, realistic
 `mock_data`, `override_resource` / `override_data` / `override_module`, `override_during = plan`,
-`expect_failures` on validation, preconditions and postconditions, and a GitHub Actions workflow.
+and `expect_failures` on validation, preconditions and postconditions.
 
 ## Goal
 
@@ -20,7 +20,6 @@ This lab goes past the basics: a reusable module tested on its own, shared mock 
 - Test `for_each`, conditional resources (`count`), dynamic blocks and per-environment rules.
 - Prove that bad input is rejected: variable validation, preconditions, postconditions.
 - Test a module directly, then replace it with `override_module` to test only the root.
-- Run it all on every pull request with GitHub Actions, no credentials.
 - Know exactly **what mocks cannot prove**.
 
 ## Architecture
@@ -63,7 +62,6 @@ This lab goes past the basics: a reusable module tested on its own, shared mock 
 | `tests/limits.tftest.hcl` | A test that passes with nonsense values: what mocks do NOT prove |
 | `examples/mock-steps/` | 7 small test files, one per real error below (`make step STEP=01-empty-mock`) |
 | `examples/naive-provider/` | Real provider, no mocks: `plan` and `test` both fail on credentials |
-| `examples/github-actions/` | Workflow that runs `terraform test` on every PR with no secrets |
 | `Makefile` | `make init`, `make validate`, `make test`, `make test-verbose`, `make step`, `make naive`, … (`make help`) |
 
 ## Prerequisites
@@ -193,16 +191,10 @@ Random values (`7scaucgi`, `6ue382pe`) are different on every run.
 
 Mocks are the fast layer. Real `plan` against a sandbox project (or policy checks) is still the next layer.
 
-## CI: GitHub Actions
-
-Copy [`examples/github-actions/terraform-test.yml`](examples/github-actions/terraform-test.yml) to
-`.github/workflows/`. It runs `fmt -check`, `init`, `validate` and `terraform test -junit-xml=...` on every PR:
-no GCP project, no secrets, no Workload Identity.
-
 ## Cleanup
 
 ```bash
-make clean   # removes .terraform folders and the JUnit report
+make clean   # removes the .terraform folders
 ```
 
 Nothing to destroy: nothing was ever created.
