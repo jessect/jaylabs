@@ -1,4 +1,4 @@
-# Lab 002 — Terraform test with a mocked azurerm provider: Azure without a subscription
+# Lab 002 — Run Azure Locally: Terraform Test + Mocks for $0
 
 > 🎬 **Video:** coming soon
 >

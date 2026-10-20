@@ -1,4 +1,4 @@
-# Lab 003 — Test Terraform on GCP with no project and no billing account: `terraform test` + `mock_provider`
+# Lab 003 — Run GCP Locally: Terraform Test + Mocks for $0
 
 > 🎬 **Video:** coming soon
 >
