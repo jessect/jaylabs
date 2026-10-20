@@ -1,4 +1,4 @@
-# Lab 001 — Terraform on LocalStack and Moto: AWS on your laptop for $0
+# Lab 001 — Run AWS Locally: Terraform + LocalStack for $0
 
 > 🎬 **Video:** coming soon
 >

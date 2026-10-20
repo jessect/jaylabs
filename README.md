@@ -6,9 +6,9 @@ Hands-on DevOps, SRE & Cloud labs from the JayLabs YouTube channel. CI/CD, IaC, 
 
 | # | Lab | Tools | Video |
 |---|---|---|---|
-| 001 | [Terraform on LocalStack and Moto: AWS on your laptop, $0](labs/001-localstack-terraform-aws-local) | Terraform, LocalStack, Moto, AWS CLI | _coming soon_ |
-| 002 | [Terraform test with a mocked azurerm provider: Azure without a subscription](labs/002-terraform-test-azure-mock) | Terraform, terraform test, azurerm | _coming soon_ |
-| 003 | [Terraform test on GCP: modules and overrides with no project or billing](labs/003-terraform-test-gcp-mock) | Terraform, terraform test, google | _coming soon_ |
+| 001 | [Run AWS Locally: Terraform + LocalStack for $0](labs/001-localstack-terraform-aws-local) | Terraform, LocalStack, Moto, AWS CLI | _coming soon_ |
+| 002 | [Run Azure Locally: Terraform + Mock Provider for $0](labs/002-terraform-test-azure-mock) | Terraform, terraform test, azurerm | _coming soon_ |
+| 003 | [Run GCP Locally: Terraform + Mock Provider for $0](labs/003-terraform-test-gcp-mock) | Terraform, terraform test, google | _coming soon_ |
 
 ## How to use
 
