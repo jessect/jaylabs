@@ -1,8 +1,8 @@
 # Lab 001 — Run AWS Locally: Terraform + LocalStack
 
-> 🎬 **Video:** coming soon
+> 🎬 **Video:** [Run AWS Locally: Terraform + LocalStack](https://youtu.be/IyE9hiBGV4I)
 >
-> **Tested with:** Terraform 1.16.6 · AWS provider 6.69.1 · LocalStack 2026.10.0 · Moto 5.2.4 · AWS CLI 2.38.2 · Docker 29.9.1 · Ubuntu 24.04 (WSL2)
+> **Tested with:** Terraform 1.16.6 · AWS provider 6.69.1 · LocalStack 2026.10.0 · Moto 5.2.4 · AWS CLI 2.38.2 · Docker 29.9.1 · Ubuntu 24.04
 
 Build a small AWS stack with Terraform **without an AWS account and without spending a cent**, first on
 [LocalStack](https://www.localstack.cloud/) and then on [Moto](https://github.com/getmoto/moto) as a fully
@@ -46,7 +46,7 @@ open-source fallback. Along the way you hit (and fix) the real errors you will m
 
 ## Prerequisites
 
-Tested on Ubuntu 24.04 (WSL2) and Ubuntu 22.04.
+Tested on Ubuntu 24.04 and Ubuntu 22.04.
 
 | Tool | Version tested |
 |---|---|
