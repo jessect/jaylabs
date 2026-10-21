@@ -2,7 +2,7 @@
 
 > 🎬 **Video:** coming soon
 >
-> **Tested with:** Terraform 1.16.6 · Google provider 8.7.0 · fake-gcs-server 1.56.1 · Google Cloud CLI emulators image 589.0.0 (Pub/Sub 0.8.37, Firestore 1.22.0, Spanner 1.5.58, Bigtable) · gcloud 570.0.0 · Docker 29.9.1 · Ubuntu 24.04 (WSL2)
+> **Tested with:** Terraform 1.16.6 · Google provider 8.7.0 · fake-gcs-server 1.56.1 · Google Cloud CLI emulators image 589.0.0 (Pub/Sub 0.8.37, Firestore 1.22.0, Spanner 1.5.58, Bigtable) · gcloud 570.0.0 · Docker 29.9.1 · Ubuntu 24.04
 
 Build a small GCP stack with Terraform **without a GCP project, without a billing account and without
 logging in**. There is no LocalStack for GCP that Terraform can talk to, so this lab runs five local
@@ -55,7 +55,7 @@ setting. Terraform really creates the resources, and `gcloud`, `cbt` and `curl` 
 
 ## Prerequisites
 
-Tested on Ubuntu 24.04 (WSL2) and Ubuntu 22.04.
+Tested on Ubuntu 24.04 and Ubuntu 22.04.
 
 | Tool | Version tested |
 |---|---|

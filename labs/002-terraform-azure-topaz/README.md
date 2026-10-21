@@ -91,7 +91,7 @@ make destroy                    # ~80 s
 make down
 ```
 
-`make hosts` adds one line to `/etc/hosts`. On WSL2, `/etc/hosts` is regenerated after `wsl --shutdown`:
+`make hosts` adds one line to `/etc/hosts`. If your system regenerates `/etc/hosts` (some setups do on restart),
 run `make hosts` again. If you change `project`, the names in the Makefile change with it.
 
 ## Real errors you will hit (and the fix)
